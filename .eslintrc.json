@@ -10,6 +10,8 @@
     "ecmaVersion": 6
   },
   "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": true, "peerDependencies": false}],
     "no-console": "off",
     "strict": ["error", "global"],
     "curly": "warn"
