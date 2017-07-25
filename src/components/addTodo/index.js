@@ -6,11 +6,12 @@ const AddTodo = ({ submitTodo }) => {
 
   return (
     <div>
-      <form onSubmit={(event) => {
-        event.preventDefault();
-        submitTodo(input.value);
-        input.value = '';
-      }}
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          submitTodo(input.value);
+          input.value = '';
+        }}
       >
         <input
           className="todo-input"

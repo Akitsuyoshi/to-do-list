@@ -7,7 +7,7 @@ describe('TodoList App', () => {
     browser.url('http://localhost:3000/');
     const actualTitle = browser.getTitle();
 
-    expect(actualTitle).to.equal('Todo List');
+    expect(actualTitle).toEqual('Todo List');
   });
 
   it('should allow to create a Todo', () => {
@@ -17,6 +17,6 @@ describe('TodoList App', () => {
 
     const actual = browser.element('.todo-text').getText();
 
-    expect(actual).to.equal(todoText);
+    expect(actual).toEqual(todoText);
   });
 });
