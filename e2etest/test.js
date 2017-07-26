@@ -7,16 +7,28 @@ describe('TodoList App', () => {
     browser.url('http://localhost:3000/');
     const actualTitle = browser.getTitle();
 
-    expect(actualTitle).toEqual('Todo List');
+    expect(actualTitle).to.equal('Todo List');
   });
 
   it('should allow to create a Todo', () => {
     const todoText = 'get better at testing';
     browser.url('http://localhost:3000/');
+    browser.element('.todo-input').setValue(todoText);
     browser.click('.todo-submit');
 
     const actual = browser.element('.todo-text').getText();
 
-    expect(actual).toEqual(todoText);
+    expect(actual).to.equal(todoText);
+  });
+
+  it('should allow to delete a toTo', () => {
+    const todoText = 'get better at testing';
+    browser.url('http://localhost:3000/');
+    browser.element('.todo-input').setValue(todoText);
+    browser.click('.todo-submit');
+    browser.click('.todo-delete');
+    const actual = browser.element('failure');
+
+    expect(actual.state).to.equal('failure');
   });
 });
