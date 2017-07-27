@@ -6,6 +6,7 @@ import TodoList from '.';
 
 describe('TodoList component', () => {
   const deleteMock = jest.fn();
+  // const undeleteMock = jest.fn();
 
   const props = {
     todos: [
