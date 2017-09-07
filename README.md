@@ -1,11 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
 The code is written with React.js, ES6, and Redux.
 
 ## A guide to TDD a React/Redux TodoList App
 
 Here it the setup to install
 ```
-$ git https://github.com/Akitsuyoshi/to-do-list
+$ git clone https://github.com/Akitsuyoshi/to-do-list
 
 // It builds the image, while adding specific name
 $ docker build -t IMAGE_NAME .
@@ -35,14 +36,14 @@ Below here, it shows how to test in the container
 $ docker exec -it CONTAINER_ID bash
 
 // Unit test:
-/usr/src/app# npm run test
+/usr/src/app# yarn run test
 
 // e2e/feature test:
-/usr/src/app# npm run selenium-setup   // run only once
-/usr/src/app# npm run selenium-start   // app must also be started with
+/usr/src/app# yarn run selenium-setup   // run only once
+/usr/src/app# yarn run selenium-start   // app must also be started with
 
-/usr/src/app# npm run e2e-tests
-/usr/src/app# npm run e2e-tests-watch  // if you want to run e2e in watch mode
+/usr/src/app# yarn run e2e-tests
+/usr/src/app# yarn run e2e-tests-watch  // if you want to run e2e in watch mode
 
 /usr/src/app# exit
 ```
