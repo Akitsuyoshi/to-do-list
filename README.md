@@ -1,10 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+The code is written with React.js, ES6, and Redux.
 
 ## A guide to TDD a React/Redux TodoList App
 
-Here it the stepup to install
+Here it the setup to install
 ```
-$ git https://github.com/Akitsuyoshi/react-tutorial
+$ git https://github.com/Akitsuyoshi/to-do-list
 
 // It builds the image, while adding specific name
 $ docker build -t IMAGE_NAME .
