@@ -1,25 +1,47 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-# A guide to TDD a React/Redux TodoList App
+## A guide to TDD a React/Redux TodoList App
 
+Here it the stepup to install
+```
+$ git https://github.com/Akitsuyoshi/react-tutorial
 
-## Setup:
+// It builds the image, while adding specific name
+$ docker build -t IMAGE_NAME .
 
-npm install
-## Start app:
+// It confirms you that the image exist with the added name
+$ docker images
 
-npm run start
-## Unit test:
+// In background, docker run this image with binding local port 3000 to container's 3000
+$ docker run -d -p 3000:3000 IMAGE_NAME
+```
+And if you visit http://localhost:3000/, you make this run.
 
-npm run test
-## e2e/feature test:
+When you stop application, this is the commands
+```
+// It shows the container ID
+$ docker container ls
 
-npm run selenium-setup   // run only once
+// To stop the process with ID
+$ docker stop CONTAINER_ID
+```
 
-npm run selenium-start   // app must also be started with
+---
 
-npm start
+Below here, it shows how to test in the container
 
-npm run e2e-tests
+```
+$ docker exec -it CONTAINER_ID bash
 
-npm run e2e-tests-watch  // if you want to run e2e in watch mode
+// Unit test:
+/usr/src/app# npm run test
+
+// e2e/feature test:
+/usr/src/app# npm run selenium-setup   // run only once
+/usr/src/app# npm run selenium-start   // app must also be started with
+
+/usr/src/app# npm run e2e-tests
+/usr/src/app# npm run e2e-tests-watch  // if you want to run e2e in watch mode
+
+/usr/src/app# exit
+```
