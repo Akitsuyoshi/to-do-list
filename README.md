@@ -1,24 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-The code is written with React.js, ES6, and Redux.
+# A React/Redux TodoList App
 
-## A guide to TDD a React/Redux TodoList App
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) in Docker.
+The code is written, according to the blog [post](https://hackernoon.com/a-guide-to-tdd-a-react-redux-todolist-app-part-1-b8a200bb7091).
 
-Here it the setup to install
-```
-$ git clone https://github.com/Akitsuyoshi/to-do-list
+### Setup to use
 
-// It builds the image, while adding specific name
-$ docker build -t IMAGE_NAME .
+1 Install this repo
 
-// It confirms you that the image exist with the added name
-$ docker images
+`$ git clone https://github.com/Akitsuyoshi/to-do-list`
 
-// In background, docker run this image with binding local port 3000 to container's 3000
-$ docker run -d -p 3000:3000 IMAGE_NAME
-```
-And if you visit http://localhost:3000/, you make this run.
 
-When you stop application, this is the commands
+2 Build this image from Dockerfile
+
+`$ docker build -t IMAGE_NAME .`
+
+3 In background, docker run this image with binding local port 3000 to container's 3000
+
+`$ docker run -d -p 3000:3000 IMAGE_NAME`
+
+
+And if you visit http://localhost:3000/, you see this todolist run.
+
+
+When you'd like to stop stop application, this is the commands
 ```
 // It shows the container ID
 $ docker container ls
@@ -46,3 +50,10 @@ $ docker exec -it CONTAINER_ID bash
 
 /usr/src/app# exit
 ```
+
+---
+
+### The left thing to do
+
+* To add the functionality, which makes the button disable
+* To deploy it on Heroiku
