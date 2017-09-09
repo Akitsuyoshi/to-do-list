@@ -5,7 +5,7 @@ The code is written with React.js, ES6, and Redux.
 
 Here it the setup to install
 ```
-$ git https://github.com/Akitsuyoshi/to-do-list
+$ git clone https://github.com/Akitsuyoshi/to-do-list
 
 // It builds the image, while adding specific name
 $ docker build -t IMAGE_NAME .

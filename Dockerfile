@@ -14,7 +14,7 @@ RUN yarn
 COPY . /usr/src/app
 
 # Build and optimize react app
-RUN yarn run buildsu
+RUN yarn run build
 
 EXPOSE 3000
 
