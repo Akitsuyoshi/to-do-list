@@ -39,14 +39,14 @@ Below here, it shows how to test in the container
 $ docker exec -it CONTAINER_ID bash
 
 // Unit test:
-/usr/src/app# npm run test
+/usr/src/app# yarn run test
 
 // e2e/feature test:
-/usr/src/app# npm run selenium-setup   // run only once
-/usr/src/app# npm run selenium-start   // app must also be started with
+/usr/src/app# yarn run selenium-setup   // run only once
+/usr/src/app# yarn run selenium-start   // app must also be started with
 
-/usr/src/app# npm run e2e-tests
-/usr/src/app# npm run e2e-tests-watch  // if you want to run e2e in watch mode
+/usr/src/app# yarn run e2e-tests
+/usr/src/app# yarn run e2e-tests-watch  // if you want to run e2e in watch mode
 
 /usr/src/app# exit
 ```
