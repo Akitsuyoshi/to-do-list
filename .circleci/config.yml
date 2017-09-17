@@ -26,6 +26,7 @@ jobs:
       - run:
           name: Run the application
           command: yarn start
+          background: true
 
       - run: yarn run selenium-setup
       - run: yarn run selenium-setup
