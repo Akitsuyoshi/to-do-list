@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/to-do-list
+    docker:
+      - image: circleci/node:latest-browsers
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'yarn global add npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-npm-wee
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: test
+          command: npm test
+
+      - run: yarn run selenium-setup
+      - run: yarn run selenium-setup
+      - run: yarn run e2e-tests
