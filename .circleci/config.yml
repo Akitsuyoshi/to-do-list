@@ -21,8 +21,12 @@ jobs:
       - run:
           name: test
           command: npm test
+          background: true
 
-      - run: yarn start
+      - run:
+          name: Run the application
+          command: yarn start
+
       - run: yarn run selenium-setup
       - run: yarn run selenium-setup
       - run: yarn run e2e-tests
