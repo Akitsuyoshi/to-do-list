@@ -40,7 +40,6 @@ jobs:
           name: Deploy Master to Heroku
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              docker login --username=$HEROKU_LOGIN --password=$HEROKU_API_KEY registry.heroku.com
-              docker build --rm=false -t registry.heroku.com/salty-river-12539/web .
-              docker push registry.heroku.com/salty-river-12539/web:latest
+              heroku container:push web
+              heroku restart
             fi
