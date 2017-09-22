@@ -40,6 +40,7 @@ jobs:
           name: Deploy Master to Heroku
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              heroku update
               heroku container:login
               heroku container:push --app salty-river-12539
               heroku restart
