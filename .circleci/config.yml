@@ -32,6 +32,7 @@ jobs:
       - run: yarn run selenium-setup
       - run: yarn run e2e-tests
 
+      - checkout
       - run: bash .circleci/setup-heroku.sh
       - add_ssh_keys:
           fingerprints:
@@ -40,8 +41,6 @@ jobs:
           name: Deploy Master to Heroku
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              heroku update
-              heroku container:login
-              heroku container:push --app salty-river-12539
+              git push heroku master
               heroku restart
             fi
